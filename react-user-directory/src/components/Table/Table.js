@@ -1,5 +1,6 @@
 import React from "react";
 import { Avatar } from "@material-ui/core";
+import "./Table.css"
 
 
 function Table(props) {
@@ -7,12 +8,12 @@ function Table(props) {
   // The data was coming in with the error because I didn't wrap it in JSX.
   const userData = props.users.map((user) => {
     return (
-     
-      <div>
-          <Avatar src={user.picture.thumbnail}></Avatar>
-        {"NAME: " + user.name.first}
-        {" " + user.name.last + " "}
-        {"GENDER:" + " " + user.gender}
+      <div className="Table__Style Table__Uppercase">
+        <Avatar src={user.picture.thumbnail}></Avatar>
+        {user.name.first + " " + user.name.last + "||"}
+        {" " + user.gender + "|| "}
+        {" " + user.email + "||"}
+        {" " + user.phone }
       </div>
     );
   });

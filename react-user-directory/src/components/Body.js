@@ -2,15 +2,20 @@ import React, { Component } from "react";
 import API from "../utils/API";
 
 export default class Body extends Component {
-  state={
-    users:[],
-    
+  state = {
+    users: [],
+    filteredUsers: [],
+  };
+
+  componentDidMount() {
+    API.getUsers().then((res) => {
+      this.setState({
+        users: res.data.results,
+      });
+      console.log(this.state);
+    });
   }
   render() {
     return <div className="container">Something</div>;
   }
 }
-// {
-//   API.getUsers().then((res) => {
-//     console.log(res.data);
-//   });

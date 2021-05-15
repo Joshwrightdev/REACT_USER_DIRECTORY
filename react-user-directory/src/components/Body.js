@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import API from "../utils/API";
+import Table from "./Table/Table"
 
 export default class Body extends Component {
   state = {
@@ -16,6 +17,10 @@ export default class Body extends Component {
     });
   }
   render() {
-    return <div className="container">Search Here</div>;
+    return (
+      <div className="container">
+        <Table users={this.state.users} />
+      </div>
+    );
   }
 }

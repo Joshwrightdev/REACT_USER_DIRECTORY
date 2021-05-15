@@ -1,0 +1,5 @@
+.header__elements{
+display: flex;
+flex-direction: row;
+justify-content: center;
+}

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import SearchForm from "./Search/Search"
 import API from "../utils/API";
 import Table from "./Table/Table"
 
@@ -18,7 +19,9 @@ export default class Body extends Component {
   }
   render() {
     return (
+      
       <div className="container">
+        <SearchForm/>
         <Table users={this.state.users} />
       </div>
     );

@@ -16,6 +16,6 @@ export default class Body extends Component {
     });
   }
   render() {
-    return <div className="container">Something</div>;
+    return <div className="container">Search Here</div>;
   }
 }

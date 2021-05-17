@@ -10,26 +10,35 @@ export default class Body extends Component {
   };
 
   componentDidMount() {
-    API.getUsers().then((res) => {
+    API.getUsers("").then((res) => {
       this.setState({
+        filteredUsers: res.data.results,
         users: res.data.results,
       });
-      console.log(this.state);
     });
   }
+
   handleInputChange = (event) => {
-    this.setState({ getUsers: event.target.value });
+    const filteredUsersArray = this.state.users.filter((user) => {
+      if (
+        user.name.first.includes(event.target.value) ||
+        user.name.last.includes(event.target.value) ||
+        user.phone.includes(event.target.value)
+      ) {
+        return true;
+      }
+    });
+    this.setState({ filteredUsers: filteredUsersArray });
   };
 
   render() {
     console.log(this.handleInputChange);
     return (
       <div className="container">
-        <SearchForm
-          handleInputChange={this.handleInputChange}
-          users={this.state.users}
-        />
-        <Table users={this.state.users} />
+        <SearchForm handleInputChange={this.handleInputChange} />
+        <Table
+         users={this.state.filteredUsers } 
+         />
       </div>
     );
   }

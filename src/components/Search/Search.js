@@ -6,7 +6,7 @@ function SearchForm(props) {
   return (
     <form>
       <div className="form-group">
-        <label htmlFor="search">Search Users</label>
+        <label htmlFor="search">Search Users(First/Last Name OR Phone Number)</label>
         <input
           value={props.value}
           onChange={props.handleInputChange}

@@ -1,7 +1,7 @@
 {
   "name": "react-user-directory",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "homepage":"https://joshwrightdev.github.io/REACT_USER_DIRECTORY/",
     "@material-ui/core": "^4.11.4",
